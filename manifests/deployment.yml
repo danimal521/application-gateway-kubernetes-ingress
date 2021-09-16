@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "pgagic-c244"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "pgagic-c244"
+  template:
+    metadata:
+      labels:
+        app: "pgagic-c244"
+    spec:
+      containers:
+        - name: "pgagic-c244"
+          image: "danimalcontainers.azurecr.io/pgagic"
+          ports:
+          - containerPort: 234
